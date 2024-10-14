@@ -1,4 +1,5 @@
 // src/components/dashboard/UserTable.tsx
+
 import { User, AlertCircle } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
@@ -18,7 +19,7 @@ interface UserTableProps {
   users: UserData[]
 }
 
-const roleColors = {
+const roleColors: Record<string, string> = {
   Superadmin: 'text-green-500',
   Salesperson: 'text-blue-500',
   Designer: 'text-purple-500',
@@ -45,7 +46,8 @@ export function UserTable({ users }: UserTableProps) {
         {users.map((user) => (
           <TableRow key={user.id}>
             <TableCell>{user.name}</TableCell>
-            <TableCell className={roleColors[user.role]}>{user.role}</TableCell>
+            {/* Use optional chaining and default value */}
+            <TableCell className={roleColors[user.role] ?? 'text-gray-500'}>{user.role}</TableCell>
             <TableCell>{user.email}</TableCell>
             <TableCell>{user.phone}</TableCell>
             <TableCell>{user.locality}</TableCell>

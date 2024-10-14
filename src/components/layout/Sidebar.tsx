@@ -1,6 +1,6 @@
 // src/components/layout/Sidebar.tsx
 import Link from 'next/link'
-import { BarChart2, Users, ShoppingBag, DollarSign, Palette, Tool, Package, FileText, Calendar, AlertCircle } from 'lucide-react'
+import { BarChart2, Users, ShoppingBag, DollarSign, Palette, Wrench, Package, FileText, Calendar, AlertCircle } from 'lucide-react'
 
 const navItems = [
   { icon: BarChart2, label: 'Dashboard', href: '/dashboard' },
@@ -8,7 +8,7 @@ const navItems = [
   { icon: ShoppingBag, label: 'Orders', href: '/dashboard/orders' },
   { icon: DollarSign, label: 'Sales', href: '/dashboard/sales' },
   { icon: Palette, label: 'Design', href: '/dashboard/design' },
-  { icon: Tool, label: 'Workshop', href: '/dashboard/workshop' },
+  { icon: Wrench, label: 'Workshop', href: '/dashboard/workshop' },
   { icon: Package, label: 'Stocking', href: '/dashboard/stocking' },
   { icon: FileText, label: 'Accounting', href: '/dashboard/accounting' },
   { icon: Calendar, label: 'Calendar', href: '/dashboard/calendar' },
@@ -19,7 +19,7 @@ export function Sidebar() {
   return (
     <aside className="w-64 bg-white shadow-md">
       <div className="p-4">
-        <h1 className="text-2xl font-bold text-red-600">FRAETERNITY</h1>
+        <h1 className="text-2xl font-extrabold text-red-600">FRAETERNITY</h1>
       </div>
       <nav className="mt-6">
         {navItems.map((item, index) => (
